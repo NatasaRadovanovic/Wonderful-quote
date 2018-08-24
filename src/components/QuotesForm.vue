@@ -35,20 +35,17 @@ export default {
            if(quotesService.list().length >= 10){
               alert("Maximum number reached, remove one to add another");
               return;
-          }
+          } 
           
           if(this.newQuote.quote === '' || this.newQuote.author === '' ){
               alert("Quote & Author can't be empty");
               return;
           }
 
-          if(this.newQuote.length >= 10){
-              alert("Maximum number reached, remove one to add another");
-              return;
-          }
-        quotesService.addNewQuote(this.newQuote);
-        this.newQuote = { 
-            quotes:[]
+            quotesService.addNewQuote(this.newQuote);
+            this.newQuote = {
+                quote:'',
+              author:''
             };
     }
   }
