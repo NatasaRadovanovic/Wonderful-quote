@@ -21,32 +21,13 @@ import { quotesService } from '../services/Quotes'
 
 export default {
   name: 'QuoteForm',
-  data(){
-      return{
-          newQuote:{
-              quote:'',
-              author:''
-          }
-      }
-  },
+  props:{
+      newQuote:Object
+ },
 
   methods:{
       onSubmit(){
-           if(quotesService.list().length >= 10){
-              alert("Maximum number reached, remove one to add another");
-              return;
-          } 
-          
-          if(this.newQuote.quote === '' || this.newQuote.author === '' ){
-              alert("Quote & Author can't be empty");
-              return;
-          }
-
-            quotesService.addNewQuote(this.newQuote);
-            this.newQuote = {
-                quote:'',
-              author:''
-            };
+          this.$emit('addQuote')
     }
   }
 }
