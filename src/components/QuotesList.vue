@@ -1,16 +1,15 @@
 <template>
   <div>
     <div class="quote-box">
-        <h3>"{{ quote.quote }}"</h3>
-        <span>- {{ quote.author }}</span>
-        <button @click="deleteQuote(quote)" class="btn btn-danger btn-sm">delete</button>
+        <button  @click="deleteQuote(quote)">
+            <h3>"{{ quote.quote }}"</h3>
+            <span>- {{ quote.author }}</span>
+        </button>    
     </div>    
   </div>
 </template>
 
 <script>
-
-import { quotesService } from '../services/Quotes'
 
 export default {
   name: 'QuoteList',
@@ -34,18 +33,20 @@ export default {
         background-color: #fff;
         float: left;
         width: 20%;
-        height:30%;
     }
 
     .quote-box h3{
         font-family: 'Playfair Display', serif;
         font-weight:bold;
-        height:150px;
     }
 
     .quote-box span{
         float: right;
         font-size: 20px;
         font-family: 'Playfair Display', serif;
+    }
+
+    .quote-box button{
+        width:100%;
     }
 </style>

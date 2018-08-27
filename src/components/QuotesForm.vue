@@ -11,13 +11,10 @@
             </div>
                 <button type="submit" class="btn btn-secondary btn-sm">Add Quote</button>
         </form><br>
-        <hr></hr>
     </div>
 </template>
 
 <script>
-
-import { quotesService } from '../services/Quotes'
 
 export default {
   name: 'QuoteForm',
